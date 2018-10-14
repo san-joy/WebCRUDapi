@@ -1,0 +1,25 @@
+@model CRUD.Models.user
+<br/><br/>
+<form asp-action="Edit" method="Post">
+    <div class="form-horizontal">
+        <div class="form-group">         
+            <div class="col-lg-4">  
+                <input asp-for="Email" class="form-control" placeholder="Your Valid Email Address"/>    
+                <span asp-validation-for="Email" class="text-danger"></span>               
+            </div>  
+        </div> 
+        <div class="form-group">           
+            <div class="col-lg-4">  
+                <input asp-for="FirstName" class="form-control" placeholder="Your First Name" />    
+                <span asp-validation-for="FirstName" class="text-danger"></span>               
+            </div>  
+        </div> 
+        <div class="form-group">         
+            <div class="col-lg-4">  
+                    <input asp-for="LastName" class="form-control" placeholder="Your Last Name"/>    
+                    <span asp-validation-for="LastName" class="text-danger"></span>               
+            </div>  
+        </div> 
+        <input type="submit" value="Update" class="col-lg-2 btn btn-primary" /> <br/>
+    </div>
+</form>

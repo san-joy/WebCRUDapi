@@ -1,0 +1,42 @@
+@model IEnumerable<CRUD.Models.user>
+<div class="panel-body">  
+    <div class="btn-group">  
+        <a asp-action="Create"  class="btn btn-primary">  
+        <i class="glyphicon glyphicon-plus"></i>  Add User  
+        </a>  
+    </div>  
+    <br/><br/>
+
+    <table class="table table-bordered table-striped table-condensed">  
+        <thead>  
+            <tr>
+                <th>Id</th>   
+                <th>Email</th>                      
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Created At</th>
+                <th>Action</th>  
+            </tr>  
+        </thead>  
+        <tbody>  
+            @foreach (var item in Model)  
+                {  
+                    <tr>  
+                        <td>@Html.DisplayFor(modelItem => item.Id)</td>  
+                        <td>@Html.DisplayFor(modelItem => item.Email)</td>  
+                        <td>@Html.DisplayFor(modelItem => item.FirstName)</td>                       
+                        <td>@Html.DisplayFor(modelItem => item.LastName)</td>                       
+                        <td>@Html.DisplayFor(modelItem => item.Created)</td>                       
+                        <td>  
+                           <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info">  
+                                <i class="glyphicon glyphicon-pencil"></i>
+                            </a>  
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger" onclick ="return confirm('Are you sure you wish to delete?');">  
+                                <i class="glyphicon glyphicon-trash"></i> 
+                            </a>  
+                        </td>  
+                    </tr>  
+                }  
+            </tbody>  
+        </table>
+</div>
